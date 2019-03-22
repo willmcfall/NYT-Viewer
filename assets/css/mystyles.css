@@ -1,0 +1,27 @@
+h1{
+font-size: x-large;
+}
+
+h2{
+    font-size: large;
+}
+
+h3{
+    font-size: medium;
+}
+
+
+p{
+    font-size: small;
+}
+
+.container{
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.navbar_custom{
+    background-color: rgb(33,50,90);
+    color:white;
+    padding: 20px;
+}
