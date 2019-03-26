@@ -1,101 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>New York Time Article Viewer</title>
 
-    <!-- Loads Relevant CSS Documents -->
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/hover.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/mystyles.css" />
+<head>
+  <meta charset="utf-8" />
+  <title>New York Time Article Viewer</title>
 
-    <!-- Loads Relevant Javascript Documents -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/myjavascript.js"></script>
-  </head>
+  <!-- Loads Reset CSS link -->
+  <link rel="stylesheet" href="assets/css/reset.css" />
 
-  <body>
-    <!-- Navigation Bard -->
-    <nav class="navbar navbar_custom">
-      <h1>
-        <i class="far fa-newspaper"></i>
-        New York Time Article Viewer
-      </h1>
-    </nav>
-    <!-- Body Container -->
-    <div class="container">
-      <!-- Row 1 -->
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <div class="card">
-            <!-- Search Card -->
-            <div class="card-header">
-              <i class="fas fa-filter"></i>
-              Search Parameters
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputFilter1">Filter 1</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputFilter1"
-                    placeholder="Enter Filter Here"
-                  />
-                </div>
+  <!-- Loads Hover CSS link -->
+  <link rel="stylesheet" href="assets/css/hover.css" />
 
-                <div class="form-group">
-                  <label for="exampleInputFilter2">Filter 2</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputFilter2"
-                    placeholder="Enter Filter Here"
-                  />
-                </div>
+  <!-- Loads Font Awesome CSS link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-                <button type="submit" id="submit" class="btn btn-primary">
-                  <i class="fas fa-search"></i> Submit</button>
-                <button type="submit" id="reset" class="btn btn-primary">Reset</button>
-              </form>
-            </div>
+  <!-- Loads Bootstrap link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <!-- Loads custom CSS link -->
+  <link rel="stylesheet" href="assets/css/mystyles.css" />
+
+  <!-- Loads JQuery links -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!--Loads custom JS links -->
+  <script src="assets/javascript/myjavascript.js"></script>
+</head>
+
+<body>
+  <!-- Navigation Bard -->
+  <nav class="navbar navbar_custom">
+    <h1>
+      <i class="far fa-newspaper"></i>
+      New York Time Article Viewer
+    </h1>
+  </nav>
+  <!-- Body Container -->
+  <div class="container">
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="card">
+          <!-- Search Card -->
+          <div class="card-header">
+            <i class="fas fa-filter"></i>
+            Search Parameters
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="keywordFilter">Keyword</label>
+                <input type="text" class="form-control" id="keywordFilter"
+                  placeholder="Please enter article keywords" />
+              </div>
+
+              <div class="form-group">
+                <label for="personFilter">Person</label>
+                <input type="text" class="form-control" id="personFilter"
+                  placeholder="Please enter article featured persons" />
+              </div>
+
+              <button type="submit" id="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i> Submit</button>
+              <button type="submit" id="reset" class="btn btn-primary">Reset</button>
+            </form>
           </div>
         </div>
-        <div class="col-sm-1"></div>
       </div>
-      <!-- Row 2 -->
-      <div class="row">
-        <br />
-      </div>
-      <!-- Row 3 -->
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <div class="card">
-            <!-- Presentation Card -->
-            <div class="card-header">
-              <i class="far fa-file-alt"></i>
-              Relevant Articles
-            </div>
-            <div class="card-body"></div>
-          </div>
-        </div>
-        <div class="col-sm-1"></div>
-      </div>
+      <div class="col-sm-1"></div>
     </div>
-  </body>
+    <!-- Row 2 -->
+    <div class="row">
+      <br />
+    </div>
+    <!-- Row 3 -->
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="card">
+          <!-- Presentation Card -->
+          <div class="card-header">
+            <i class="far fa-file-alt"></i>
+            Relevant Articles
+          </div>
+          <div class="card-body"></div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+</body>
+
 </html>
