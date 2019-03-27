@@ -25,16 +25,20 @@ $(document).ready(function() {
         var newDiv = $("<div>");
         var newPTitle = $("<h2>");
         var newPParagraph = $("<p>");
-        var newALink = $("<a> Open Article </a>");
+        var newPDate = $("<p>");
+        var newALink = $("<a> Full Article </a>");
         newPTitle.text(newspaper.response.docs[i].headline.main);
         newPParagraph.text(newspaper.response.docs[i].lead_paragraph);
+        var dateConvert = moment(newspaper.response.docs[i].pub_date, "");
+        newPDate.text(dateConvert.format("LL"));
         newALink.attr("href", newspaper.response.docs[i].web_url);
         newALink.attr("target", "_blank");
         $(newDiv).append(newPTitle);
         $(newDiv).append(newPParagraph);
+        $(newDiv).append(newPDate);
         $(newDiv).append(newALink);
         $(newDiv).append("<hr>");
-        $(".article_presentation").append(newDiv);
+        $(".article_presentation").prepend(newDiv);
       }
 
         });
