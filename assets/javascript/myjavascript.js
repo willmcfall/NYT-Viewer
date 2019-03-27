@@ -1,27 +1,33 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    // Creating a function that runs the AJAX call
-    function displayArticles(event) {
-      var api = "AJmum4IJuxlQ0gxxc2zp1rJOmn5FB1Uk";
+  // Creating a function that runs the AJAX call
+  function displayArticles(event) {
+    var api = "AJmum4IJuxlQ0gxxc2zp1rJOmn5FB1Uk";
 
-      event.preventDefault();
+    event.preventDefault();
 
-      // Query
-      var keywordFilter = $("#keywordFilter").val();
-      console.log(keywordFilter);
+    // Query
+    var query= "";
+    query = $("#keywordFilter").val();
+    console.log(query);
 
-      // Filter
-      var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?query=" + keywordFilter +"&api-key=" + api;
-      console.log(queryURL);
+    var filter = "";
+    filter = "person:" + $("#personFilter").val();
+    console.log(filter);
 
-      // Creating an AJAX call for the specific movie button being clicked
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(newspaper) {
-        console.log(newspaper);
+    // Query URL generator
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + query + "&fq=" + filter + "&api-key=" + api;
+    console.log(queryURL);
 
-      for (i=0; i< newspaper.response.docs.length; i++){
+    // Creating an AJAX call for the specific movie button being clicked
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (newspaper) {
+      console.log(newspaper);
+
+      // Presents results to HTML interface
+      for (i = 0; i < newspaper.response.docs.length; i++) {
         var newDiv = $("<div>");
         var newPTitle = $("<h2>");
         var newPParagraph = $("<p>");
@@ -40,12 +46,10 @@ $(document).ready(function() {
         $(newDiv).append("<hr>");
         $(".article_presentation").prepend(newDiv);
       }
+    });
+  };
 
-        });
-      };
+  // Adding a click event listener for the click of the submit button
+  $("#submit").on("click", displayArticles);
 
-    // Adding a click event listener for the click of the submit button
-    $("#submit").on("click", displayArticles);
-
-  });
-  
+});
