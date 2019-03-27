@@ -15,6 +15,11 @@ p{
     font-size: small;
 }
 
+
+a{
+    font-size: small;
+}
+
 .container{
     background-color: lightgray;
     padding: 20px;
